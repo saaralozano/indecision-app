@@ -7,6 +7,8 @@
 
             <ChatBullula :meus-est="true" nuntius="¿Salimos luego a dar una vuelta?" />
 
+            <ChatBullula :meus-est="false" nuntius="no" imago="https://yesno.wtf/assets/yes/2-5df1b403f2654fa77559af1bf2332d7a.gif" />
+
         </div>
     </div>
 

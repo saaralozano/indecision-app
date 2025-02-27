@@ -9,6 +9,7 @@
     <div v-else class="flex">
          <div class="bg-gray-300 text-black p-2 max-w-xs rounded-lg">
                <span class="capitalize">{{ nuntius }}</span>
+               <img v-if="imago" :src="imago" alt="YesNoImage" class="w-52 h-52">
          </div>
     </div>
 </template>
