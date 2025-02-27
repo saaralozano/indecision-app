@@ -5,9 +5,11 @@
                 type="text"
                 class="px-4 py-2 flex-1 border rounded-full focus:outline-none"
                 placeholder="Type your message ... "
+                v-model="nuntius"
+                @keypress.enter="mitteNuntius"
             />
 
-            <button class="bg-blue-500 text-white rounded-full p-2 ml-2 hover:bg-blue-600 focus:outline-none">
+            <button @click="mitteNuntius" class="bg-blue-500 text-white rounded-full p-2 ml-2 hover:bg-blue-600 focus:outline-none">
                 <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" >
 	                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -18,3 +20,24 @@
             </button>
     </div>
 </template>
+
+
+<script lang="ts" setup>
+import { ref } from 'vue';
+
+const emmits = defineEmits<{
+    mitteNuntius: [textus: string]
+}>();
+
+const nuntius = ref('');
+
+const mitteNuntius = () => {
+    if ( !nuntius.value ) return;
+
+    emmits('mitteNuntius', nuntius.value);
+
+    nuntius.value = '';
+}
+
+
+</script>
